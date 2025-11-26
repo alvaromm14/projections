@@ -191,20 +191,20 @@
     }
 
     .proj-list {
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 0.25rem;
       margin-bottom: 0.5rem;
       height: auto;
     }
 
     .proj-list button {
-      flex: 1 1 auto; /* ancho flexible según espacio */
-      min-width: 100px; /* asegura botones visibles */
+      flex: auto 1;
       margin-bottom: 0.25rem;
       text-align: center;
-      padding: 0.2rem 0.4rem;
+      padding: 0rem 0.4rem;
     }
 
     .chart-container svg {
