@@ -138,27 +138,26 @@
 
 <style>
   .chart-container {
-    max-width: 1300px;
+    max-width: 1000px;
     display: flex;
-    align-items: stretch;
     margin: 0 auto;
+    height: 450px;
   }
 
   .proj-list {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.32rem;
     justify-content: flex-start;
-    flex: 0 0 200px;
+    flex: 0 0 180px;
+    height: 100%;
   }
 
   .proj-list button {
-    flex: 1;
-    width: 100%;
+    flex: 0 0 auto;
     padding: 0.35rem;
-    font-size: 0.85rem;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 0.25px solid black;
     background: transparent;
     cursor: pointer;
     text-align: left;
