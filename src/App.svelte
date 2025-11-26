@@ -198,13 +198,13 @@
       gap: 0.25rem;
       margin-bottom: 0.5rem;
       height: auto;
+      flex: unset;
     }
 
     .proj-list button {
       flex: auto 1;
       margin-bottom: 0.25rem;
       text-align: center;
-      padding: 0rem 0.4rem;
     }
 
     .chart-container svg {
