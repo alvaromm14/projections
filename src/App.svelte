@@ -147,20 +147,23 @@
   .proj-list {
     display: flex;
     flex-direction: column;
-    gap: 0.32rem;
     justify-content: flex-start;
     flex: 0 0 180px;
     height: 100%;
   }
 
   .proj-list button {
-    flex: 0 0 auto;
-    padding: 0.35rem;
+    flex: 1;
     border-radius: 6px;
     border: 0.25px solid black;
     background: transparent;
     cursor: pointer;
     text-align: left;
+    margin-bottom: 0.32rem;
+  }
+
+  .proj-list button:last-child {
+    margin-bottom: 0;
   }
 
   .proj-list button.active,
