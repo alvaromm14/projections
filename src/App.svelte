@@ -34,7 +34,7 @@
   );
 
   let width;
-  let height = 450;
+  let height = 350;
 
   const northPoleStereographic = () =>
     geoStereographic()
@@ -138,18 +138,28 @@
 
 <style>
   .chart-container {
-    max-width: 1000px;
     display: flex;
+    flex-direction: row; /* botones a la izquierda en escritorio */
+    max-width: 1000px;
     margin: 0 auto;
-    height: 450px;
+    height: 350px;
   }
 
+  .chart-container svg {
+    width: 100%; /* SVG ocupa todo el ancho disponible */
+    height: auto;
+    max-height: 350px;
+    margin-left: -60px; /* opcional, ajusta según necesidad */
+  }
+
+  /* Lista de botones */
   .proj-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* vertical en escritorio */
     justify-content: flex-start;
     flex: 0 0 180px;
     height: 100%;
+    gap: 0.32rem;
   }
 
   .proj-list button {
@@ -159,28 +169,46 @@
     background: transparent;
     cursor: pointer;
     text-align: left;
-    margin-bottom: 0.32rem;
   }
 
-  .proj-list button:last-child {
-    margin-bottom: 0;
-  }
-
-  .proj-list button.active,
-  .proj-list button[aria-pressed="true"] {
-    background: #5ca7e6;
-    color: #fff;
-    font-weight: 600;
-    border-color: #222;
-  }
-
+  /* Botones activos */
   .proj-list button.active {
     background: #5ca7e6;
     color: #fff;
     font-weight: 600;
     border-color: #222;
   }
+
   .proj-list button:not(.active):hover {
     background: #eee;
+  }
+
+  /* MÓVIL */
+  @media (max-width: 768px) {
+    .chart-container {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .proj-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0.25rem;
+      margin-bottom: 0.5rem;
+      height: auto;
+    }
+
+    .proj-list button {
+      flex: 1 1 auto; /* ancho flexible según espacio */
+      min-width: 100px; /* asegura botones visibles */
+      margin-bottom: 0.25rem;
+      text-align: center;
+      padding: 0.2rem 0.4rem;
+    }
+
+    .chart-container svg {
+      margin-left: 0;
+    }
   }
 </style>
