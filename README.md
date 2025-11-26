@@ -1,0 +1,1 @@
+Visualización interactiva para comparar diferentes proyecciones.
