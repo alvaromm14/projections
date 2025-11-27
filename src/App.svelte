@@ -245,7 +245,7 @@
     {/each}
   </div>
 
-  <svg {width} {height}>
+  <svg {width} {height} on:click={hideTooltip}>
     {#each countries as country}
       <path d={path(country)} fill="#5ca7e6" stroke="none" />
     {/each}
