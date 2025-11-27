@@ -1,34 +1,42 @@
 <script>
-    export let data;
-
-    import { format } from "d3-format";
-    import { fade } from "svelte/transition"
-
+    export let text = "";
+    export let visible = false;
+    export let x = 0;
+    export let y = 0;
+    export let left;
 </script>
 
-{#if data?.pais}
-    <div transition:fade>
-        <h2>{data.pais}</h2>
-        <h3>{data.total.toLocaleString("es-ES", { useGrouping: true })} millones de euros</h3>
+{#if visible}
+    <div
+        class="tooltip"
+        style="
+      top:{y}px;
+      left:{x}px;
+      transform:{left ? 'translateX(-100%)' : 'translateX(0)'}"
+    >
+        {text}
     </div>
 {/if}
 
 <style>
-    div {
+    .tooltip {
         position: absolute;
-        bottom: 30px;
-        right: 0px;
-        text-align: right;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 0.25rem;
-    }
-
-    h3 {
-        font-size: 1.15rem;
-        font-weight: 200;
+        background: white;
+        padding: 0.5rem 0.5rem;
+        border-radius: 6px;
+        pointer-events: none;
+        max-width: 180px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        font-size: 0.78rem;
+        line-height: 1.1;
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
     }
 </style>
